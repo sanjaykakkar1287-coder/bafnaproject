@@ -1,0 +1,185 @@
+/* Basic Reset & Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin-top: 20px; /* Added top margin to push header down */
+}
+
+/* Header Styles */
+.site-header {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-top: -50px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Left Side: Logo */
+.header-left .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    display: flex; /* Helps with vertical alignment of image */
+    align-items: center;
+}
+
+.header-left .logo img {
+    max-height: 40px; /* Control the height of your logo */
+}
+
+/* Center: Search Box */
+.header-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.search-form {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-button {
+    padding: 10px 15px;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    border-left: none;
+}
+
+/* Right Side: Contact & Hamburger */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    white-space: nowrap; /* Prevents "Contact Us" from wrapping */
+}
+
+/* New styles for the Contact Us button */
+.contact-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-right: 15px; /* Added right margin */
+}
+
+.hamburger-btn {
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger 'X' animation */
+.hamburger-btn.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger-btn.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-btn.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Menu (Toggled by Hamburger) */
+.mobile-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    position: fixed; /* Use fixed to overlay content */
+    top: 0;
+    right: 0;
+    width: 280px; /* Set a width for the side menu */
+    height: 100%;
+    transform: translateX(100%); /* Move it off-screen to the right */
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    padding-top: 80px; /* Add padding to clear the header */
+}
+
+.mobile-menu.open {
+    transform: translateX(0); /* Slide it into view */
+}
+
+.mobile-menu a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+}
+
+.mobile-menu a:hover {
+    background-color: #555;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .header-container {
+        flex-wrap: wrap;
+    }
+
+    .header-center {
+        order: 3; /* Move search to the bottom */
+        width: 100%;
+        padding: 15px 0 0 0;
+    }
+
+    .contact-btn {
+        display: none; /* Hide "Contact Us" on small screens */
+    }
+}
+
+main {
+    padding: 20px;
+}
