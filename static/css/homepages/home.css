@@ -1,0 +1,602 @@
+
+    /* COMPREHENSIVE LUXURY DESIGN SYSTEM FOR ABOUT SECTION */
+    .about-section {
+        --brand-primary: #0F6B4B; 
+        --brand-accent: #D4AF37; 
+        --brand-dark: #073525;
+        --text-primary: #111612; 
+        --text-muted: #55605a;
+        --bg-main: #FFFFFF;
+        --bg-tint: #f4f8f5;
+        --shadow-elegant: 0 30px 60px -15px rgba(15, 107, 75, 0.06), 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+        --border-subtle: rgba(15, 107, 75, 0.08);
+
+        padding: clamp(80px, 12vw, 20px) 20px;
+        background-color: transparent;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Fine Line Structural Geometry Background Overlay */
+    .about-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: 
+            linear-gradient(var(--border-subtle) 1px, transparent 1px),
+            linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+        background-size: 80px 80px;
+        mask-image: radial-gradient(circle at 80% 60%, black 10%, transparent 75%);
+        opacity: 0.5;
+        z-index: 1;
+    }
+
+    .about-shell {
+        width: min(1240px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(400px, 0.95fr) minmax(0, 1.05fr);
+        align-items: center;
+        gap: clamp(50px, 8vw, 100px);
+        position: relative;
+        z-index: 2;
+    }
+
+    /* ASYMMETRIC VISUAL LAYERING (LEFT SIDE) */
+    .about-left {
+        position: relative;
+        width: 100%;
+    }
+
+    .composition-grid {
+        position: relative;
+        padding: 40px 40px 40px 0;
+    }
+
+    /* Main Portrait Frame */
+    .about-image-wrapper.main-frame {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-elegant);
+        transform: perspective(1200px) rotateY(6deg) rotateX(2deg);
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 2;
+        background: #fff;
+    }
+
+    .about-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .frame-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(7, 53, 37, 0.15), transparent);
+        pointer-events: none;
+    }
+
+    /* Floating Architectural Glass Card Component */
+    .floating-glass-card {
+        position: absolute;
+        bottom: 10px;
+        right: -10px;
+        width: 260px;
+        z-index: 3;
+        padding: 2px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,245,242,0.4));
+        box-shadow: 0 20px 40px -10px rgba(7, 53, 37, 0.12);
+        transform: translateZ(30px) perspective(1200px) rotateY(6deg);
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card-inner {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: 24px;
+        border-radius: 14px;
+    }
+
+    .floating-glass-card i {
+        color: var(--brand-accent);
+        font-size: 20px;
+        margin-bottom: 14px;
+        display: inline-block;
+    }
+
+    .floating-glass-card h3 {
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--brand-dark);
+        margin: 0 0 6px 0;
+    }
+
+    .floating-glass-card p {
+        font-size: 12px;
+        line-height: 1.5;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* Abstract Metallic Geometry Shadow Background */
+    .geometry-accent {
+        position: absolute;
+        top: -20px;
+        left: -30px;
+        width: 140px;
+        height: 140px;
+        border-radius: 24px;
+        background: linear-gradient(135deg, rgba(214, 175, 55, 0.15), transparent);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    /* Interactive Visual Micro-Parallax Triggers */
+    .composition-grid:hover .main-frame {
+        transform: perspective(1200px) rotateY(0deg) rotateX(0deg) translateY(-4px);
+    }
+
+    .composition-grid:hover .about-image {
+        transform: scale(1.04);
+    }
+
+    .composition-grid:hover .floating-glass-card {
+        transform: translateZ(50px) perspective(1200px) rotateY(0deg) translate(-15px, -10px);
+    }
+
+    /* BUSINESS EDITORIAL DESIGN (RIGHT SIDE) */
+    .section-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--brand-primary);
+        margin-bottom: 16px;
+    }
+
+    .badge-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--brand-accent);
+        border-radius: 50%;
+    }
+
+    .about-title {
+        font-size: clamp(36px, 4vw, 52px);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        color: var(--text-primary);
+        margin-bottom: 32px;
+    }
+
+    .about-title .title-row {
+        display: block;
+    }
+
+    .editorial-body {
+        margin-bottom: 40px;
+    }
+
+    .lead-text {
+        font-size: clamp(17px, 1.3vw, 20px);
+        font-weight: 600;
+        line-height: 1.6;
+        color: var(--brand-dark);
+        margin-bottom: 20px;
+    }
+
+    .about-description {
+        font-size: clamp(15px, 1.1vw, 17px);
+        line-height: 1.65;
+        color: var(--text-muted);
+        margin-bottom: 18px;
+    }
+
+    .about-description:last-child {
+        margin-bottom: 0;
+    }
+
+    .about-action-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 32px;
+    }
+
+    .trust-sig {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--brand-dark);
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .trust-sig i {
+        color: var(--brand-primary);
+        font-size: 18px;
+    }
+
+    /* RESPONSIVE LAYOUT CONSTRAINTS */
+    @media (max-width: 992px) {
+        .about-shell {
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+
+        .about-left {
+            max-width: 540px;
+            margin: 0 auto;
+        }
+        
+        .composition-grid {
+            padding: 30px 20px 30px 0;
+        }
+
+        .about-title {
+            text-align: center;
+        }
+
+        .section-badge {
+            justify-content: center;
+            display: flex;
+        }
+
+        .about-action-row {
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .about-section {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .floating-glass-card {
+            position: relative;
+            width: 100%;
+            right: 0;
+            bottom: 0;
+            margin-top: 20px;
+            transform: none !important;
+        }
+
+        .about-image-wrapper.main-frame {
+            transform: none !important;
+        }
+        
+        .composition-grid {
+            padding: 0;
+        }
+    }
+
+
+
+   /* COMPREHENSIVE LUXURY DESIGN SYSTEM FOR categories SECTION */
+    .categories-section {
+        --brand-primary: #0F6B4B; 
+        --brand-accent: #D4AF37; 
+        --brand-dark: #073525;
+        --text-primary: #111612; 
+        --text-muted: #55605a;
+        --bg-main: #FFFFFF;
+        --bg-tint: #f4f8f5;
+        --shadow-elegant: 0 30px 60px -15px rgba(15, 107, 75, 0.04), 0 10px 30px -10px rgba(0, 0, 0, 0.02);
+        --border-subtle: rgba(15, 107, 75, 0.08);
+
+        padding: clamp(80px, 12vw, 140px) 20px;
+        background-color: var(--bg-tint);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .categories-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: 
+            linear-gradient(var(--border-subtle) 1px, transparent 1px),
+            linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+        background-size: 80px 80px;
+        mask-image: linear-gradient(to bottom, black, transparent 90%);
+        opacity: 0.6;
+        z-index: 1;
+    }
+
+    .categories-shell {
+        width: min(1240px, 100%);
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .categories-header {
+        text-align: center;
+        max-width: 780px;
+        margin: 0 auto 64px;
+    }
+
+    .categories-title {
+        font-size: clamp(34px, 3.8vw, 48px);
+        font-weight: 900;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        color: var(--text-primary);
+        margin-bottom: 20px;
+    }
+
+    .categories-title span {
+        display: block;
+    }
+
+    .categories-subtitle {
+        color: var(--text-muted);
+        font-size: clamp(15px, 1.1vw, 17px);
+        line-height: 1.65;
+        margin-bottom: 40px;
+    }
+
+    /* PREMIUM TABS CONTROLLER */
+    .market-tabs {
+        display: inline-flex;
+        background: rgba(15, 107, 75, 0.05);
+        padding: 6px;
+        border-radius: 14px;
+        position: relative;
+        border: 1px solid rgba(15, 107, 75, 0.06);
+    }
+
+    .market-tab {
+        border: none;
+        background: transparent;
+        padding: 12px 28px;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text-muted);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 10px;
+        position: relative;
+        z-index: 2;
+        transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .market-tab i {
+        font-size: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    .market-tab.active {
+        color: #ffffff;
+    }
+
+    .market-tab.active i {
+        transform: scale(1.1);
+        color: var(--brand-accent);
+    }
+
+    .tab-indicator-pill {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        height: calc(100% - 12px);
+        background: linear-gradient(135deg, var(--brand-primary), var(--brand-dark));
+        border-radius: 10px;
+        box-shadow: 0 8px 20px -5px rgba(15, 107, 75, 0.3);
+        z-index: 1;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* GRID CONTAINER ACCELERATORS */
+    .categories-grid-container {
+        position: relative;
+        perspective: 1500px; /* Essential 3D viewport context for page turning dynamics */
+        transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Smooth height transition */
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        transition: opacity 0.5s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .products-grid.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* 3D BOOK PAGE FLIP ANIMATION MECHANICS */
+    .product-card-3d {
+        perspective: 1500px;
+        transform-style: preserve-3d;
+        opacity: 0;
+    }
+
+    /* Page Turning Keyframe Execution logic triggered on layout activation */
+    .products-grid.active .product-card-3d {
+        animation: bookPageFlipIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        /* Incremental staggered delays calculated naturally per item index */
+        animation-delay: calc(var(--page-index) * 0.15s);
+    }
+
+    @keyframes bookPageFlipIn {
+        0% {
+            opacity: 0;
+            transform: rotateY(-70deg) translateX(-40px) scale(0.92);
+            transform-origin: left center;
+        }
+        100% {
+            opacity: 1;
+            transform: rotateY(0deg) translateX(0) scale(1);
+            transform-origin: left center;
+        }
+    }
+
+    /* REFINED INNER CONTAINER LAYERS */
+    .product-card {
+        background: var(--bg-main);
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-elegant);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+        height: 100%;
+    }
+
+    .product-image-container {
+        width: 100%;
+        aspect-ratio: 1.6 / 1;
+        background: var(--brand-dark);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .placeholder-visual {
+        font-size: 44px;
+        color: rgba(255, 255, 255, 0.2);
+        z-index: 2;
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+    }
+
+    .image-overlay-glow {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.15), transparent 70%);
+        opacity: 0.4;
+        z-index: 1;
+        transition: opacity 0.4s ease;
+    }
+
+    .product-details {
+        padding: 28px;
+        position: relative;
+    }
+
+    .product-meta {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-weight: 700;
+        color: var(--brand-primary);
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .product-card h3 {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--brand-dark);
+        margin: 0 0 12px 0;
+        letter-spacing: -0.01em;
+    }
+
+    .product-card p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin: 0 0 24px 0;
+    }
+
+    .product-link {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--brand-primary);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.3s ease;
+    }
+
+    .product-link i {
+        font-size: 12px;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* CARD HOVER METRICS */
+    .product-card:hover {
+        transform: translateY(-8px) rotateY(2deg); /* Micro page twist on manual focus pointer */
+        border-color: rgba(15, 107, 75, 0.18);
+        box-shadow: 0 40px 70px -20px rgba(7, 53, 37, 0.08), 0 10px 20px -10px rgba(0, 0, 0, 0.02);
+    }
+
+    .product-card:hover .placeholder-visual {
+        transform: scale(1.12);
+        color: var(--brand-accent);
+    }
+
+    .product-card:hover .image-overlay-glow {
+        opacity: 0.7;
+    }
+
+    .product-card:hover .product-link {
+        color: var(--brand-accent);
+    }
+
+    .product-card:hover .product-link i {
+        transform: translateX(4px);
+    }
+
+    /* RESPONSIVE LAYOUT CONSTRAINTS */
+    @media (max-width: 992px) {
+        .products-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .categories-section {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .market-tabs {
+            width: 100%;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .market-tab {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .tab-indicator-pill {
+            display: none; 
+        }
+
+        .market-tab.active {
+            background: var(--brand-primary);
+        }
+
+        .products-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+    }
+

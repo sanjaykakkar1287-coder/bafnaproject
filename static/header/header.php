@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./static/header/style.css">
+    <link rel="stylesheet" href="./static/css/homepages/hero.css">
+     <link rel="stylesheet" href="./static/css/homepages/home.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="./static/js/header.js"></script>
 <script src="./static/js/pagesajax.js"></script>
+<script src="./static/js/hero.js"></script>
 </head>
-<body>
 
     <header class="site-header">
         <div class="header-container">
             <div class="header-left">
-                <a href="/" class="logo">
-                    <img src="./static/images/logo.png" alt="Bafna Logo"> <!-- Added image logo -->
+                <a href="index.php" class="logo">
+                    <img src="./static/img/logo.png" alt="Bafna Logo"> <!-- Added image logo -->
                 </a>
             </div>
 
@@ -56,30 +58,45 @@
             $(element).addClass('active');
         }
 
+        // Function to close the mobile menu
+        function closeMobileMenu() {
+            $('.hamburger-btn').removeClass('open');
+            $('.mobile-menu').removeClass('open');
+        }
+
         // Use a more specific selector for the header button
         $("#contactbtn").click(function(e){
             e.preventDefault();
             setActive('#contactmenu'); // Set menu item active
             loadContactPage();
+           // This button is not in the mobile menu, so no need to close it.
         });
 
         $("#aboutbtn").click(function(e){
             e.preventDefault();
             setActive(this);
             loadAboutPage();
+            closeMobileMenu();
         });
 
         $("#productsbtn").click(function(e){
             e.preventDefault();
             setActive(this);
             loadProductPage();
+            closeMobileMenu();
         });
 
         $("#homebtn").click(function(e){
             e.preventDefault();
             setActive(this);
             // Instead of reloading the page, load the home content via AJAX
-            $(".indexpage").load("./pages/home.php");
+            $(".indexpage").load("./pages/home.php", function() {
+                // Re-initialize hero animations if they exist on the home page
+                if (typeof initHomeHero === 'function') {
+                    initHomeHero();
+                }
+            });
+            closeMobileMenu();
         });
 
         // Handle the contact link inside the slide-out menu
@@ -87,6 +104,15 @@
             e.preventDefault();
             setActive(this);
             loadContactPage();
+            closeMobileMenu();
+        });
+
+        // Use event delegation for the button inside the loaded content
+        $(document).on('click', '#about-legacy-btn', function(e) {
+            e.preventDefault();
+            setActive('#aboutbtn'); // Keep the menu item active
+            loadAboutPage();
+            // No need to close mobile menu here as this button is not in it
         });
     });
     </script>
