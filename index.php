@@ -13,8 +13,8 @@
 </body>
 </html>
 <main>
-<div class="indexpage">
-    <!-- Your page content goes here -->
+<div class="indexpage" style="margin-top: 50px;">
+    
     <?php include './pages/home.php'; ?>
 </div>
 </main>

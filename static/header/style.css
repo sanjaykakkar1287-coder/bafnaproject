@@ -144,8 +144,9 @@ body {
     height: 100%;
     transform: translateX(100%); /* Move it off-screen to the right */
     transition: transform 0.3s ease-in-out;
-    z-index: 999;
-    padding-top: 80px; /* Add padding to clear the header */
+    will-change: transform; /* Optimization for smooth animation */
+    z-index: 999; /* Set z-index higher than the header (1000) */
+    padding-top: 120px; /* Add padding to clear the header */
 }
 
 .mobile-menu.open {
@@ -161,6 +162,12 @@ body {
 
 .mobile-menu a:hover {
     background-color: #555;
+}
+
+/* Style for the currently active menu item */
+.mobile-menu a.active {
+    background-color: #007bff;
+    color: #ffffff;
 }
 
 /* Responsive Design for Mobile */
