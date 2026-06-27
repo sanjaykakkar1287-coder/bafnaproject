@@ -9,10 +9,13 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="./static/js/header.js"></script>
-<script src="./static/js/pagesajax.js"></script>
-<script src="./static/js/hero.js"></script>
+<!-- Add these to your <head> section -->
+<link rel="stylesheet" href="./static/css/homepages/home.css">
+<link rel="stylesheet" href="./static/css/homepages/hero.css">
+<link rel="stylesheet" href="./static/css/homepages/about.css">
+<link rel="stylesheet" href="./static/css/homepages/product.css">
+
+
 </head>
 
     <header class="site-header">
@@ -50,6 +53,7 @@
         <a href="#" id="productsbtn" class="menu-link">Products</a>
         <a href="#" id="contactmenu" class="menu-link">Contact us</a>
     </nav>
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
     $(document).ready(function(){
         // Function to set the active class

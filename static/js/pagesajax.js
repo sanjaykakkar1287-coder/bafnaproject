@@ -1,3 +1,13 @@
+function runAfterContentRender(callback) {
+    if (window.requestAnimationFrame) {
+        window.requestAnimationFrame(function () {
+            callback();
+        });
+    } else {
+        window.setTimeout(callback, 0);
+    }
+}
+
 function loadContactPage() {
 
     $.ajax({
@@ -6,6 +16,8 @@ function loadContactPage() {
         success: function(response) {
 
             $(".indexpage").html(response);
+            // No specific JS initialization needed for the contact page currently
+            // If you add JS for contact.php, call its init function here.
 
         },
         error: function() {
@@ -25,6 +37,12 @@ function loadAboutPage() {
         success: function(response) {
 
             $(".indexpage").html(response);
+            // Initialize About page scripts after content is loaded
+            runAfterContentRender(function () {
+                if (typeof window.initAboutPageInteractions === "function") {
+                    window.initAboutPageInteractions();
+                }
+            });
 
         },
         error: function() {
@@ -43,6 +61,12 @@ function loadProductPage() {
         success: function(response) {
 
             $(".indexpage").html(response);
+            // Initialize Product page scripts after content is loaded
+            runAfterContentRender(function () {
+                if (typeof window.initShowroomCarousel === "function") {
+                    window.initShowroomCarousel();
+                }
+            });
 
         },
         error: function() {

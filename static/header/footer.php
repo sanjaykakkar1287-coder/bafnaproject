@@ -54,4 +54,12 @@
         </div>
     </div>
 </footer>
-
+<!-- Add these before your closing </body> tag -->
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="./static/js/hero.js"></script>
+<script src="./static/js/about.js"></script>
+<script src="./static/js/product.js"></script>
+<script src="./static/js/pagesajax.js"></script>
+<script src="./static/js/header.js"></script>
+</body>
+</html>

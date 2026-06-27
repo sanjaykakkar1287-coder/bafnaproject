@@ -1,0 +1,297 @@
+/* DESIGN SYSTEM COMPLIANT LUXURY VARIABLES */
+.about-page-hero {
+    --brand-primary: #0F6B4B; 
+    --brand-accent: #D4AF37; 
+    --brand-dark: #073525;
+    --text-primary: #111612; 
+    --text-muted: #55605a;
+    --bg-main: #FFFFFF;
+    --bg-tint: #f4f8f5;
+    --shadow-elegant: 0 30px 60px -15px rgba(15, 107, 75, 0.05), 0 10px 30px -10px rgba(0, 0, 0, 0.02);
+    --border-subtle: rgba(15, 107, 75, 0.08);
+
+    padding: clamp(60px, 8vw, 120px) 20px;
+    background-color: var(--bg-main);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fine Line Architecture Matrix Grid Overlay */
+.about-page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(var(--border-subtle) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(circle at 50% 30__, black 40%, transparent 80%);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.about-page-shell {
+    width: min(1240px, 100%);
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* SECTION 1: INTRO GRID TYPOGRAPHY */
+.about-intro-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: flex-start;
+    margin-bottom: 56px;
+}
+
+.about-hero-title {
+    font-size: clamp(36px, 4.2vw, 56px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+}
+.about-hero-title span { display: block; }
+
+.lead-text {
+    font-size: clamp(17px, 1.2vw, 20px);
+    line-weight: 1.6;
+    color: var(--brand-dark);
+    font-weight: 600;
+}
+
+.body-text {
+    font-size: clamp(15px, 1.1vw, 17px);
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+}
+
+.legacy-years-badge {
+    background: var(--bg-tint);
+    border: 1px solid var(--border-subtle);
+    padding: 16px 24px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: var(--shadow-elegant);
+}
+
+.years-num {
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--brand-primary);
+    line-height: 1;
+}
+.years-lbl {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--brand-dark);
+    line-height: 1.3;
+}
+
+/* PREMIUM DIVIDER LINE */
+.luxury-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-subtle) 20%, var(--border-subtle) 80%, transparent);
+    margin: clamp(48px, 6vw, 72px) 0;
+}
+
+/* SECTION 2: MISSION & VISION STRIPS */
+.mission-vision-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    perspective: 1000px;
+}
+
+.mv-card {
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    border-radius: 24px;
+    padding: clamp(32px, 4vw, 48px);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-elegant);
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.mv-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(15, 107, 75, 0.04);
+    color: var(--brand-primary);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 24px;
+    transition: all 0.4s ease;
+    transform: translateZ(20px);
+}
+
+.mv-card h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--brand-dark);
+    margin: 0 0 14px 0;
+    letter-spacing: -0.02em;
+    transform: translateZ(25px);
+}
+
+.mv-card p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin: 0;
+    transform: translateZ(20px);
+}
+
+/* 3D Dynamic Hover States for Mission/Vision */
+.mv-card:hover {
+    transform: translateY(-8px) rotateX(2deg) scale(1.01);
+    border-color: rgba(214, 175, 55, 0.25);
+}
+.mv-card:hover .mv-icon {
+    background: var(--brand-primary);
+    color: #ffffff;
+    transform: translateZ(40px) scale(1.05);
+}
+
+/* SECTION 3: TEAM MATRIX ARCHITECTURE */
+.center-headers {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 48px;
+}
+.section-main-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--brand-dark);
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+.section-subtitle {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.team-card {
+    background: var(--bg-tint);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    padding: 28px 20px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-icon-box {
+    font-size: 22px;
+    color: var(--brand-primary);
+    margin-bottom: 16px;
+    transition: transform 0.4s ease;
+}
+
+.team-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--brand-dark);
+    margin: 0 0 8px 0;
+}
+
+.team-card p {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.team-card:hover {
+    background: #ffffff;
+    border-color: rgba(15, 107, 75, 0.18);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-elegant);
+}
+.team-card:hover .team-icon-box {
+    transform: scale(1.15) rotate(8deg);
+    color: var(--brand-accent);
+}
+
+/* SECTION 4: CERTIFICATIONS BANNER BLOCK */
+.cert-promo-banner {
+    background: linear-gradient(135deg, var(--brand-dark), #031c13);
+    border-radius: 24px;
+    padding: clamp(32px, 5vw, 56px);
+    color: #ffffff;
+    box-shadow: 0 30px 60px -15px rgba(7, 53, 37, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-promo-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 50%, rgba(214, 175, 55, 0.15), transparent 60%);
+}
+
+.banner-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.banner-text { max-width: 620px; }
+.banner-text h2 {
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 800;
+    margin: 12px 0;
+    letter-spacing: -0.02em;
+}
+.banner-text p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.75);
+    margin: 0;
+}
+
+.golden-btn {
+    border-color: rgba(214, 175, 55, 0.4) !important;
+    background: rgba(214, 175, 55, 0.05) !important;
+    color: var(--brand-accent) !important;
+}
+.golden-btn:hover {
+    background: var(--brand-accent) !important;
+    color: var(--brand-dark) !important;
+}
+
+/* RESPONSIVE CONTROL MEDIA BREAKPOINTS */
+@media (max-width: 992px) {
+    .about-intro-grid { grid-template-columns: 1fr; gap: 32px; }
+    .mission-vision-container { grid-template-columns: 1fr; gap: 20px; }
+    .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .banner-inner { flex-direction: column; text-align: center; gap: 28px; }
+    .banner-text { max-width: 100%; }
+}
+
+@media (max-width: 640px) {
+    .about-page-hero { padding-left: 16px; padding-right: 16px; }
+    .team-grid { grid-template-columns: 1fr; gap: 16px; }
+    .cert-promo-banner { padding: 32px 20px; }
+}
