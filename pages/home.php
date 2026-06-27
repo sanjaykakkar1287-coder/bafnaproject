@@ -843,6 +843,3 @@
     }
 }
 </style>
-<script>
-    
-</script>
