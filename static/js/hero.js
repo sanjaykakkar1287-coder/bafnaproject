@@ -224,3 +224,228 @@
 
         $(initCategorySwitching);
     })(window.jQuery);
+
+
+
+    //map flight route flip card and global footprint//
+
+    
+    (function ($) {
+        if (!$) { return; }
+
+        function initIntegratedCommandHub() {
+            var $section = $(".appearance-section").last();
+            var $pills = $section.find(".region-pill");
+            var $cards = $section.find(".expo-card-3d");
+            var $nodes = $section.find(".geo-marker-node");
+            var $routes = $section.find(".flight-route");
+            
+            var totalItems = $cards.length;
+            var currentIdx = 0;
+            var loopInterval = null;
+
+            // Database matrix for live JS telemetry switching
+            var regionalDataset = [
+                {
+                    title: "North America Corridor",
+                    hubs: 14,
+                    transit: "Ocean Freight Priority",
+                    log: "Processing high-volume private label notebook configurations for US distributors."
+                },
+                {
+                    title: "EMEA Distribution Channels",
+                    hubs: 19,
+                    transit: "Intermodal Containerized",
+                    log: "Sustainable wood-free pencil architectures routed to European wholesale networks."
+                },
+                {
+                    title: "MENA Strategic Markets",
+                    hubs: 11,
+                    transit: "Direct Land & Sea Route",
+                    log: "High-volume academic notebooks dispatched for regional supply frameworks in the Middle East."
+                },
+                {
+                    title: "India Markets",
+                    hubs: 56,
+                    transit: "Direct Land & Air Route",
+                    log: "Custom academic exercise book production runs successfully routed to GCC ports."
+                }
+            ];
+            
+            // Map regions to the actual map elements (nodes and routes)
+            // This allows multiple map items to be activated by a single pill/card.
+            var regionMap = [
+                [0, 1, 2], // N. America: Canada, USA, Mexico
+                [3, 4],    // EMEA: UK, Europe
+                [5, 6, 7], // MENA: MENA, West Africa, East Africa
+                []         // India: No remote nodes, just the HQ. We can add one if needed.
+            ];
+
+
+            function runNumericCounter($element, value) {
+                $({ countVal: 0 }).animate({ countVal: value }, {
+                    duration: 700,
+                    easing: "swing",
+                    step: function () {
+                        $element.text(Math.ceil(this.countVal));
+                    },
+                    complete: function () {
+                        $element.text(value);
+                    }
+                });
+            }
+
+            function syncGlobalDashboard(targetIndex) {
+                currentIdx = targetIndex;
+                var galleryIndex = targetIndex % totalItems; // Loop gallery if more regions than cards
+
+                // 1. Toggle UI Navigation Buttons / Selection Pills
+                $pills.removeClass("active").eq(targetIndex).addClass("active");
+
+                // 2. Animate and re-compile Right 3D Photo Book Stack
+                $cards.removeClass("active flipped queued"); // Reset all cards
+                $cards.each(function(index) {
+                    if (index === galleryIndex) $(this).addClass("active");
+                    else if (index < galleryIndex) $(this).addClass("flipped");
+                    else if (index === galleryIndex + 1) $(this).addClass("queued");
+                });
+
+                // 3. Highlight Map Nodes & Animate Flight Routes based on the new mapping
+                $nodes.removeClass("active");
+                $routes.removeClass("active");
+                var elementsToShow = regionMap[targetIndex] || [];
+                elementsToShow.forEach(function(i) {
+                    $nodes.eq(i).addClass("active");
+                    $routes.eq(i).addClass("active");
+                });
+
+                // 4. Update Left Text Dashboard & Run Numeric Counters via JS
+                var data = regionalDataset[currentIdx];
+                $section.find(".dynamic-region-title").text(data.title);
+                $section.find(".dynamic-transit-text").text(data.transit);
+                $section.find(".dynamic-log-text").hide().text(data.log).fadeIn(300);
+                
+                var $counterEl = $section.find(".counter-run");
+                runNumericCounter($counterEl, data.hubs);
+
+                // Update controls markers
+                $section.find(".curr-idx").text(galleryIndex + 1);
+            }
+
+            function nextRotation() {
+                var nextIdx = (currentIdx + 1) % $pills.length; // Cycle through all 4 regions
+                syncGlobalDashboard(nextIdx);
+            }
+
+            function startTimer() {
+                loopInterval = setInterval(nextRotation, 5000); // Increased interval for better viewing
+            }
+
+            function stopTimer() {
+                if (loopInterval) {
+                    clearInterval(loopInterval);
+                    loopInterval = null;
+                }
+            }
+
+            // Bind Event Listeners
+            // The number of pills/regions might be different from the number of expo cards.
+            // We should use the number of regions for the loop.
+            $section.find(".total-idx").text(totalItems); // This is for the gallery, which is correct.
+            syncGlobalDashboard(0);
+            startTimer();
+
+            // Intercept direct pill choices
+            $pills.on("click", function (e) {
+                e.preventDefault();
+                stopTimer();
+                var newIndex = $(this).data("index");
+                // The gallery might have a different number of items than regions.
+                // We'll sync the dashboard but let the gallery be controlled separately.
+                // Or, we can link them. Let's link them for now.
+                syncGlobalDashboard(newIndex);
+            });
+
+            // Intercept dashboard next/prev triggers
+            $section.find(".next-btn").on("click", function(e) {
+                e.preventDefault();
+                stopTimer();
+                var next = (currentIdx + 1) % $pills.length;
+                var next = (currentIdx + 1) % regionalDataset.length;
+                syncGlobalDashboard(next);
+            });
+
+            $section.find(".prev-btn").on("click", function(e) {
+                e.preventDefault();
+                stopTimer();
+                var prev = (currentIdx - 1 + $pills.length) % $pills.length;
+                var prev = (currentIdx - 1 + regionalDataset.length + regionalDataset.length) % regionalDataset.length;
+                syncGlobalDashboard(prev);
+            });
+        }
+
+        $(initIntegratedCommandHub);
+    })(window.jQuery);
+
+
+(function ($) {
+    if (!$) { return; }
+
+    function initCertificationsAutoHover() {
+        var $section = $(".certifications-section").last();
+        var $cards = $section.find(".cert-card");
+        var totalCards = $cards.length;
+        var currentIdx = 0;
+        var autoHoverTimer = null;
+
+        
+        function cycleAutoHover() {
+          
+            $cards.removeClass("auto-hover");
+            
+           
+            $cards.eq(currentIdx).addClass("auto-hover");
+            
+            
+            currentIdx = (currentIdx + 1) % totalCards;
+        }
+
+       
+        function startEngine() {
+            if (!autoHoverTimer) {
+                autoHoverTimer = setInterval(cycleAutoHover, 2500);
+            }
+        }
+
+        // 3. टाइमर इंजन बंद करने का फंक्शन
+        function stopEngine() {
+            if (autoHoverTimer) {
+                clearInterval(autoHoverTimer);
+                autoHoverTimer = null;
+                $cards.removeClass("auto-hover"); 
+            }
+        }
+
+       
+        if (totalCards > 0) {
+           
+            cycleAutoHover();
+            startEngine();
+
+           
+            $cards.on("mouseenter", function () {
+                stopEngine();
+            });
+
+            
+            $cards.on("mouseleave", function () {
+                currentIdx = $cards.index(this); 
+                startEngine();
+            });
+        }
+    }
+
+    
+    $(initCertificationsAutoHover);
+})(window.jQuery);
+    

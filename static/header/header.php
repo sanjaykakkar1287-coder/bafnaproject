@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./static/header/style.css">
     <link rel="stylesheet" href="./static/css/homepages/hero.css">
-     <link rel="stylesheet" href="./static/css/homepages/home.css">
+    <link rel="stylesheet" href="./static/css/homepages/home.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -18,7 +18,7 @@
     <header class="site-header">
         <div class="header-container">
             <div class="header-left">
-                <a href="index.php" class="logo">
+                <a href="./" class="logo">
                     <img src="./static/img/logo.png" alt="Bafna Logo"> <!-- Added image logo -->
                 </a>
             </div>
@@ -92,9 +92,9 @@
             // Instead of reloading the page, load the home content via AJAX
             $(".indexpage").load("./pages/home.php", function() {
                 // Re-initialize hero animations if they exist on the home page
-                if (typeof initHomeHero === 'function') {
-                    initHomeHero();
-                }
+                // if (typeof initHomeHero === 'function') {
+                //     initHomeHero();
+                // }
             });
             closeMobileMenu();
         });
