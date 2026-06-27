@@ -448,4 +448,3 @@
     
     $(initCertificationsAutoHover);
 })(window.jQuery);
-    

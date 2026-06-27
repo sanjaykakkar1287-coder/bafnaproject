@@ -11,7 +11,7 @@
     --border-subtle: rgba(15, 107, 75, 0.08);
 
     padding: clamp(60px, 8vw, 120px) 20px;
-    background-color: var(--bg-main);
+    background-color: transparent;
     position: relative;
     overflow: hidden;
 }

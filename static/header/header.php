@@ -81,6 +81,7 @@
             setActive(this);
             loadAboutPage();
             closeMobileMenu();
+            
         });
 
         $("#productsbtn").click(function(e){
@@ -88,6 +89,7 @@
             setActive(this);
             loadProductPage();
             closeMobileMenu();
+            initProductPage();
         });
 
         $("#homebtn").click(function(e){
@@ -101,6 +103,7 @@
                 // }
             });
             closeMobileMenu();
+           
         });
 
         // Handle the contact link inside the slide-out menu
