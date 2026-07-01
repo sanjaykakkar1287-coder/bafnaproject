@@ -1,0 +1,15 @@
+# robots.txt for Bafna Project
+# See http://www.robotstxt.org/ for documentation
+
+User-agent: *
+Allow: /
+
+# Directories to disallow
+Disallow: /admin/
+Disallow: /ajax/
+Disallow: /config/
+Disallow: /vendor/
+Disallow: /db/
+
+# Sitemap location
+Sitemap: https://www.yourdomain.com/sitemap.xml

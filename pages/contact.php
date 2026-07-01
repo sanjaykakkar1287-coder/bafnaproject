@@ -81,7 +81,10 @@
 
                     </div>
 
-                    
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input type="text" name="country">
+                    </div>
 
                     <div class="form-group">
                         <label>Product Requirement</label>
