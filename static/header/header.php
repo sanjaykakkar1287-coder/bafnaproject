@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="./static/css/homepages/hero.css">
 <link rel="stylesheet" href="./static/css/homepages/about.css">
 <link rel="stylesheet" href="./static/css/homepages/product.css">
+<link rel="stylesheet" href="./static/css/homepages/contact.css">
 
 
 </head>

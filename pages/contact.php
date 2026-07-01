@@ -1,5 +1,5 @@
 <!-- Link to the new stylesheet for this page -->
-<link rel="stylesheet" href="./static/css/homepages/contact.css">
+
 
 <div class="contact-page-container">
     <div class="contact-shell">
@@ -55,45 +55,59 @@
             <!-- Right Column: Enquiry Form -->
             <div class="contact-form-panel">
                 <h3 class="form-title">Enquiry Form</h3>
-                <form action="#" method="POST" class="enquiry-form">
+                <form id="enquiryForm" method="POST">
+
                     <div class="form-grid">
+
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <label>Name</label>
+                            <input type="text" name="name" required>
                         </div>
+
                         <div class="form-group">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company">
+                            <label>Company Name</label>
+                            <input type="text" name="company">
                         </div>
+
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
+                            <label>Email Address</label>
+                            <input type="email" name="email">
                         </div>
+
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
+                            <label>Phone Number</label>
+                            <input type="tel" name="phone">
                         </div>
+
                     </div>
+
+                    
+
                     <div class="form-group">
-                        <label for="country">Country</label>
-                        <input type="text" id="country" name="country" required>
+                        <label>Product Requirement</label>
+                        <input type="text" name="requirement">
                     </div>
+
                     <div class="form-group">
-                        <label for="requirement">Product Requirement</label>
-                        <input type="text" id="requirement" name="requirement">
+                        <label>Message</label>
+                        <textarea name="message" rows="5" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
+
                     <div class="form-group">
                         <button type="submit" class="submit-btn">
+
                             <span class="btn-text">Send Message</span>
+
                             <i class="fa-solid fa-paper-plane"></i>
+
                         </button>
                     </div>
+
                 </form>
             </div>
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="./static/adminjs/formajax.js"></script>
