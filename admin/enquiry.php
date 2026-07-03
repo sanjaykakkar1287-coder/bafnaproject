@@ -11,6 +11,7 @@ if(isset($_POST['action']) && $_POST['action']=="enquiry"){
     $country     = mysqli_real_escape_string($conn,$_POST['country']);
     $requirement = mysqli_real_escape_string($conn,$_POST['requirement']);
     $message     = mysqli_real_escape_string($conn,$_POST['message']);
+    $created_at  = date('Y-m-d H:i:s'); // Get current timestamp
 
     $sql="INSERT INTO enquiries
     (
@@ -20,7 +21,8 @@ if(isset($_POST['action']) && $_POST['action']=="enquiry"){
         phone,
         country,
         requirement,
-        message
+        message,
+        created_at
     )
     VALUES
     (
@@ -30,7 +32,8 @@ if(isset($_POST['action']) && $_POST['action']=="enquiry"){
         '$phone',
         '$country',
         '$requirement',
-        '$message'
+        '$message',
+        '$created_at'
     )";
 
     if(mysqli_query($conn,$sql)){
