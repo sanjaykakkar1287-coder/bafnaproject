@@ -1,4 +1,5 @@
 <!-- Change Password Modal -->
+ <link rel="stylesheet" href="../static/css/admincss/changepasswordmodal.css">
     <div id="changePasswordModal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>

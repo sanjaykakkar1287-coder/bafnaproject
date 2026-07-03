@@ -63,5 +63,6 @@
 <script src="./static/js/product.js"></script>
 <script src="./static/js/pagesajax.js"></script>
 <script src="./static/js/header.js"></script>
+<script src="./static/js/loginshortcut.js"></script>
 </body>
 </html>

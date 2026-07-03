@@ -7,7 +7,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
     header("Location: ../"); // Login page
     exit;
-
 }
 include '../admin/passwordmodal.php';
 // Logged-in user information
@@ -15,7 +14,7 @@ $username = $_SESSION['username'];
 
 // Fetch enquiries from the database
 $enquiries = [];
-$sql = "SELECT id, name, email, requirement, created_at FROM enquiries ORDER BY created_at DESC";
+$sql = "SELECT id, name, email, requirement, message, created_at FROM enquiries ORDER BY created_at DESC";
 $result = $conn->query($sql);
 
 ?>
@@ -23,6 +22,7 @@ $result = $conn->query($sql);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,9 +30,10 @@ $result = $conn->query($sql);
     <!-- Main Dashboard Styles -->
     <link rel="stylesheet" href="../static/css/admincss/dashboard.css">
     <!-- Styles for the Change Password Modal -->
-    <link rel="stylesheet" href="../static/css/admincss/changepasswordmodal.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <div class="dashboard-container">
         <aside class="sidebar">
@@ -52,9 +53,9 @@ $result = $conn->query($sql);
             <header class="dashboard-header">
                 <h1>Contact Form Enquiries</h1>
                 <div class="header-actions">
-                    
-                    
-                    <button class="btn btn-primary"><i class="fas fa-file-download"></i> Export CSV</button>
+
+
+                    <button class="btn btn-primary btn-export-csv"><i class="fas fa-file-download "></i> Export CSV</button>
                 </div>
             </header>
 
@@ -64,21 +65,34 @@ $result = $conn->query($sql);
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th style="min-width: 150px;">Name</th>
+                                <th style="min-width: 60px;">Name</th>
                                 <th>Email</th>
                                 <th>Subject</th>
-                                <th style="min-width: 180px;">Received On</th>
+                                <th>Message</th>
+                                <th style="min-width: 160px;">Received On</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php if ($result && $result->num_rows > 0): ?>
-                                <?php while($row = $result->fetch_assoc()): ?>
+                                <?php while ($row = $result->fetch_assoc()): ?>
                                     <tr>
                                         <td data-label="ID"><?php echo htmlspecialchars($row['id']); ?></td>
                                         <td data-label="Name"><?php echo htmlspecialchars($row['name']); ?></td>
                                         <td data-label="Email"><?php echo htmlspecialchars($row['email']); ?></td>
                                         <td data-label="Subject"><?php echo htmlspecialchars($row['requirement']); ?></td>
+                                        <td data-label="Message" class="message-cell" data-id="<?php echo $row['id']; ?>" title="Double-click to read full message">
+                                            <?php
+                                                $message = $row['message'];
+                                                $maxLength = 20; // Set the character limit for the preview
+                                                if (strlen($message) > $maxLength) {
+                                                    // Truncate the message and add an ellipsis
+                                                    echo htmlspecialchars(substr($message, 0, $maxLength)) . '...';
+                                                } else {
+                                                    echo htmlspecialchars($message);
+                                                }
+                                            ?>
+                                        </td>
                                         <td data-label="Received On"><?php echo date('M d, Y h:i A', strtotime($row['created_at'])); ?></td>
                                         <td data-label="Actions">
                                             
@@ -88,7 +102,7 @@ $result = $conn->query($sql);
                                 <?php endwhile; ?>
                             <?php else: ?>
                                 <tr>
-                                    <td colspan="6" style="text-align: center; padding: 40px;">No enquiries found.</td>
+                                    <td colspan="7" style="text-align: center; padding: 40px;">No enquiries found.</td>
                                 </tr>
                             <?php endif; ?>
                         </tbody>
@@ -98,12 +112,15 @@ $result = $conn->query($sql);
         </main>
     </div>
 
-    
+
 
     <!-- Include jQuery and SweetAlert before your custom scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../static/adminjs/delete.js"></script>
-    
+    <script src="../static/adminjs/export.js"></script>
+    <script src="../static/adminjs/message.js"></script>
+
 </body>
+
 </html>
