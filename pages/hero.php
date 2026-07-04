@@ -28,8 +28,8 @@
                 and customer-centric solutions to serve domestic and international markets.</p>
 
             <div class="hero-buttons">
-                <a href="#" class="hero-btn hero-btn-primary">
-                    <span class="btn-text">Request Bulk Quote</span>
+                <a href="#" class="hero-btn hero-btn-primary modal-btn">
+                    <span class="btn-text">Request Quote</span>
                     <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
                 </a>
 

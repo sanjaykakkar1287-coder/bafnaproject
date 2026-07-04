@@ -41,7 +41,7 @@ body {
 }
 
 .header-left .logo img {
-    max-height: 40px; /* Control the height of your logo */
+    max-height: 60px; /* Control the height of your logo */
 }
 
 /* Center: Search Box */

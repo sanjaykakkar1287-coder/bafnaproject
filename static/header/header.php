@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="./static/css/homepages/product.css">
 <link rel="stylesheet" href="./static/css/homepages/contact.css">
 
+<?php include './pages/modal.php'; ?>
 
 </head>
 

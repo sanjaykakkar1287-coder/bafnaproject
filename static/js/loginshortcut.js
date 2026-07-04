@@ -1,8 +1,9 @@
 $(document).on("keydown", function (e) {
+    console.log(e);
+    const key = e.key.toLowerCase();
 
-    if (e.ctrlKey && e.key.toLowerCase() === "l") {
-        e.preventDefault(); // Prevent default browser action (may not work in all browsers)
+    if ((e.ctrlKey || e.metaKey) && key === "l") {
+        e.preventDefault();
         window.location.href = "./admin/login.php";
     }
-
 });

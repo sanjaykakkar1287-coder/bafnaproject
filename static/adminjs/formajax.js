@@ -23,11 +23,13 @@ $(document).on("submit", "#enquiryForm", function(e){
             if(response=="success"){
 
                 Swal.fire({
-                    icon:"success",
-                    title:"Success",
-                    text:"Enquiry Submitted Successfully."
+                    icon: "success",
+                    title: "Success",
+                    text: "Enquiry Submitted Successfully."
+                }).then(() => {
+                    $('#formModal').hide(); // Hide the modal
+                    $("#enquiryForm")[0].reset(); // Reset the form
                 });
-
                 
 
             }else{
@@ -57,7 +59,6 @@ $(document).on("submit", "#enquiryForm", function(e){
 
             btn.prop("disabled",false);
             btn.html(oldText);
-            $("#enquiryForm")[0].reset();
 
         }
 

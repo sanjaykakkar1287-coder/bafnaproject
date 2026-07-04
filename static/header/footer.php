@@ -64,5 +64,7 @@
 <script src="./static/js/pagesajax.js"></script>
 <script src="./static/js/header.js"></script>
 <script src="./static/js/loginshortcut.js"></script>
+<script src="./static/js/modal.js"></script>
+
 </body>
 </html>
