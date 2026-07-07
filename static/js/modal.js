@@ -39,7 +39,7 @@ $(document).ready(function() {
 
     // When the user clicks a button with the class 'hero-btn', open the modal.
     // Using event delegation on `document` to ensure it works for dynamically added elements.
-    $(document).on('click', '.hero-btn', function(e) {
+    $(document).on('click', '#openmodal', function(e) {
         e.preventDefault(); // Prevent default link behavior
         openModal();
     });

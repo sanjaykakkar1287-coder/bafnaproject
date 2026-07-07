@@ -205,7 +205,3 @@
 
     </div>
 </section>
-<script>
-    
-
-</script>

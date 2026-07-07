@@ -56,7 +56,7 @@
             </div>
 
             <div class="about-action-row " >
-                <a href="#" id="about-legacy-btn" class="hero-btn hero-btn-primary"  >
+                <a href="#" id="about-legacy-btn" class=" herobtn hero-btn-primary"   >
                     <span class="btn-text" >Explore Our Legacy</span>
                     <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
                 </a>

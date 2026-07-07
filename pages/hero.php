@@ -28,12 +28,12 @@
                 and customer-centric solutions to serve domestic and international markets.</p>
 
             <div class="hero-buttons">
-                <a href="#" class="hero-btn hero-btn-primary modal-btn">
+                <a href="#" class="hero-btn hero-btn-primary modal-btn " id="openmodal">
                     <span class="btn-text">Request Quote</span>
                     <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
                 </a>
 
-                <a href="#" class="hero-btn hero-btn-outline">
+                <a href="#" class=" hero-btn-outline" >
                     <i class="fa-solid fa-arrow-down-to-line" aria-hidden="true"></i>
                     <span>Download Catalogue</span>
                 </a>
@@ -79,12 +79,26 @@
                         <img src="./static/img/world-map.png" alt="World export map" class="world-map">
                         <div class="map-fallback" aria-hidden="true"></div>
                         <div class="tooltip-container"></div>
+                        
+
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- NEW PRODUCT SHOWCASE CARD -->
+            <div class="hero-product-card">
+                <div class="hero-product-card-inner">
+                    <div class="product-card-3d-viewer">
+                        <img src="./static/img/note.avif" alt="Premium Notebook Product" class="product-image-3d">
+                    </div>
+                    <div class="product-card-info">
+                        <p>High-Density Paper Notebooks</p>
                     </div>
                 </div>
             </div>
+            
         </div>
+        
     </div>
 </section>
-
-
-

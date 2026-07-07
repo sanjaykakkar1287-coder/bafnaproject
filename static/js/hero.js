@@ -190,14 +190,18 @@
 
             // Start Auto Loop configuration (Triggers every 2000 milliseconds)
             function startAutoCycle() { 
+                // First, ensure any existing timer is cleared before starting a new one.
+                if (autoTimer) clearInterval(autoTimer);
+
                 autoTimer = setInterval(function () {
                     var $activeTab = $section.find(".market-tab.active");
                     var $nextTab = $activeTab.next(".market-tab");
                     
                     // Loop back round to initial element if boundaries are met
-                    if (!$nextTab.length) {
+                    if ($nextTab.length === 0) {
                         $nextTab = $tabs.first();
                     }
+
                     activateTab($nextTab);
                 }, 5000);
             }
@@ -217,8 +221,19 @@
 
             $tabs.on("click", function (e) {
                 e.preventDefault();
-                stopAutoCycle(); // Forever terminate automatic loop sequence upon direct user intentional engagement
+                stopAutoCycle(); // Stop the automatic switching
                 activateTab($(this));
+                // Do not restart here; wait for mouseleave.
+            });
+
+            // Pause auto-cycle on hover to allow user interaction
+            $section.on("mouseenter", function() {
+                stopAutoCycle();
+            });
+ 
+            // Restart the auto-cycle when the user's mouse leaves the section
+            $section.on("mouseleave", function () {
+                startAutoCycle(); // Simply restart the timer.
             });
         }
 

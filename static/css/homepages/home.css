@@ -1208,12 +1208,12 @@
         cursor: pointer;
     }
 
-    /* कार्ड के अंदर के एलिमेंट्स को 3D स्पेस में ऊपर उठाने के लिए */
+    
     .cert-icon-frame,
     .cert-info h3,
     .cert-status-badge,
     .cert-info p {
-        transform: translateZ(30px); /* यह एलिमेंट्स को बैकग्राउंड से 30px बाहर हवा में दिखाएगा */
+        transform: translateZ(30px); 
         transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -1261,7 +1261,7 @@
         margin: 0;
     }
 
-    /* प्रीमियम मैटेलिक सिल्क शिमर इफ़ेक्ट */
+   
     .cert-shimmer {
         position: absolute;
         inset: 0;
@@ -1282,7 +1282,7 @@
 
     /* 🔥 3D HOVER EFFECT TRIPPERS */
     .cert-card:hover , .cert-card.auto-hover {
-        /* कार्ड हल्का सा स्केल होगा और 3D स्पेस में यूज़र की तरफ झुकेगा */
+       
         transform: translateY(-10px) rotateX(4deg) rotateY(-2deg) scale(1.02);
         border-color: rgba(214, 175, 55, 0.35); 
         box-shadow: 
@@ -1290,7 +1290,7 @@
             0 15px 30px -15px rgba(214, 175, 55, 0.05);
     }
 
-    /* होवर होने पर अंदर के एलिमेंट्स और ज़्यादा बाहर की तरफ पॉप-आउट होंगे */
+    
     .cert-card:hover , .cert-card.auto-hover  .cert-icon-frame {
         background: var(--brand-primary);
         color: #ffffff;
@@ -1308,20 +1308,20 @@
     .cert-card:hover .cert-info h3 { transform: translateZ(45px); }
     .cert-card:hover .cert-info p { transform: translateZ(40px); }
 
-    /* लाइट रिफ्लेक्शन को एक्टिवेट करना */
+    
     .cert-card:hover ,.cert-card.auto-hover  .cert-shimmer {
         background-position: -50% 0;
         transition: background-position 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* RESPONSIVE LAYOUT TRANSLATIONS */
+   
     @media (max-width: 1024px) {
         .certs-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 20px;
         }
         .cert-card:hover {
-            transform: translateY(-6px) scale(1.01); /* मोबाइल/टैबलेट पर मोशन सिकनेस रोकने के लिए 3D रोटेशन ऑफ */
+            transform: translateY(-6px) scale(1.01); 
         }
     }
 
@@ -1329,5 +1329,95 @@
         .certs-grid {
             grid-template-columns: 1fr;
             gap: 16px;
+        }
+    }
+
+    /* STYLES FOR NEW HERO PRODUCT CARD */
+    .hero-product-card {
+        position: relative;
+        margin-top: -15%;
+        max-width: 270px; /* Making the card smaller */
+        margin-left: auto;
+        margin-right: -30px;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px -15px rgba(15, 107, 75, 0.1), 0 8px 16px -8px rgba(0,0,0,0.03);
+        overflow: hidden;
+        z-index:9999;
+        padding: 2px; /* Padding to create space for the border */
+        background: var(--bg-main);
+    }
+
+    .hero-product-card::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 175%;
+        height: 175%;
+        background: conic-gradient(from 0deg, transparent 0%, transparent 60%, var(--brand-accent) 85%, var(--brand-primary) 95%, transparent 100%);
+        animation: animatedBorderSpin 6s linear infinite;
+        transform-origin: center center;
+        transform: translate(-50%, -50%);
+    }
+
+    .hero-product-card-inner {
+        background: linear-gradient(145deg, #f8fcfb, #f0f5f3);
+        border-radius: 18px; /* Slightly smaller radius than the parent */
+        padding: 12px;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card-3d-viewer {
+        width: 100%;
+        aspect-ratio: 1.5 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 800px; /* Adjusted perspective for the smaller size */
+        margin-bottom: 12px;
+    }
+
+    .product-image-3d {
+        max-width: 70%; /* Made the image slightly smaller */
+        height: auto;
+        object-fit: contain;
+        /* Increased initial rotation for a more dynamic 3D look */
+        transform: rotateY(-20deg) rotateX(8deg) translateZ(20px);
+        /* Added filter to the transition for a smoother shadow effect */
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        filter: drop-shadow(0 12px 15px rgba(7, 53, 37, 0.12));
+    }
+
+    .hero-product-card:hover .product-image-3d {
+        /* Enhanced hover effect: brings it forward and scales it up more */
+        transform: rotateY(0) rotateX(0) translateZ(55px) scale(1.1);
+        filter: drop-shadow(0 25px 30px rgba(7, 53, 37, 0.18));
+    }
+
+    .product-card-info {
+        text-align: center;
+    }
+
+    .product-card-info p {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--brand-dark, #073525);
+        margin: 0;
+    }
+
+    /* Responsive adjustments for the new card */
+    @media (max-width: 992px) {
+        .hero-product-card {
+            margin-top: -12%; /* Adjust overlap for medium screens */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-product-card {
+            margin-top: 32px;
         }
     }
