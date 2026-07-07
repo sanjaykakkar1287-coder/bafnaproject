@@ -1408,6 +1408,20 @@
         color: var(--brand-dark, #073525);
         margin: 0;
     }
+    .product-card-3d-viewer{
+    perspective:1000px;
+}
+
+.product-image-3d{
+    width:100%;
+    transition:transform .8s ease, opacity .8s ease;
+    transform-origin:left center;
+}
+
+.product-image-3d.flip{
+    transform:rotateY(-90deg);
+    opacity:0;
+}
 
     /* Responsive adjustments for the new card */
     @media (max-width: 992px) {

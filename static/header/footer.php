@@ -34,7 +34,7 @@
         <!-- Column 4: Call to Action -->
         <div class="footer-column footer-cta">
             <h3 class="footer-title">Ready to Partner With Us?</h3>
-            <a href="#" id="contactbtn-footer" class="hero-btn hero-btn-primary">
+            <a href="#"  class="hero-btn hero-btn-primary" id="contactfooter">
                 <span class="btn-text">Contact Us</span>
                 <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
             </a>
@@ -44,9 +44,9 @@
     <div class="footer-bottom-bar">
         <div class="bottom-bar-shell">
             <div class="legal-links">
-                <a href="#">Terms & Conditions</a>
+                <a href="#" id="termsbtn-footer">Terms & Conditions</a>
                 <span>|</span>
-                <a href="#">Privacy Policy</a>
+                <a href="#" id="privacybtn-footer">Privacy Policy</a>
             </div>
             <div class="copyright">
                 © <?php echo date("Y"); ?> P P Bafna Ventures Pvt. Ltd. All Rights Reserved.| Developed By <a href="https://businexperts.com/" class="color-shifting-text1">Businexperts</a>

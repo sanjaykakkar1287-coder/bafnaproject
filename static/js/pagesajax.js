@@ -63,6 +63,7 @@ function loadContactPage() {
 
             $(".indexpage").html(response);
             // After loading the contact page, initialize its form handler
+            
             initContactFormHandler();
         },
         error: function() {
@@ -100,6 +101,51 @@ function loadProductPage() {
 
     $.ajax({
         url: "./pages/product.php",
+        type: "GET",
+        success: function(response) {
+
+            $(".indexpage").html(response);
+            // Initialize Product page scripts after content is loaded
+            if (typeof window.initShowroomCarousel === "function") {
+                window.initShowroomCarousel();
+            }
+
+        },
+        error: function() {
+
+            alert("No Page Found");
+
+        }
+    });
+
+}
+
+function loadPrivacyPage() {
+
+    $.ajax({
+        url: "./pages/privacypolicy.php",
+        type: "GET",
+        success: function(response) {
+
+            $(".indexpage").html(response);
+            // Initialize Product page scripts after content is loaded
+            if (typeof window.initShowroomCarousel === "function") {
+                window.initShowroomCarousel();
+            }
+
+        },
+        error: function() {
+
+            alert("No Page Found");
+
+        }
+    });
+
+}
+function loadTermsPage() {
+
+    $.ajax({
+        url: "./pages/terms.php",
         type: "GET",
         success: function(response) {
 

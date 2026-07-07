@@ -463,3 +463,48 @@
     
     $(initCertificationsAutoHover);
 })(window.jQuery);
+
+$(function () {
+
+    const products = [
+        {
+            image: "./static/img/note1.png",
+            title: "High-Density Paper Notebooks"
+        },
+        {
+            image: "./static/img/note2.png",
+            title: "Executive Premium Notebook"
+        },
+        {
+            image: "./static/img/note3.png",
+            title: "College Spiral Notebook"
+        },
+        {
+            image: "./static/img/note4.png",
+            title: "Leather Cover Journal"
+        }
+    ];
+
+    let index = 0;
+
+    function changeProduct() {
+
+        $("#productImage").addClass("flip");
+
+        setTimeout(function () {
+
+            index = (index + 1) % products.length;
+
+            $("#productImage").attr("src", products[index].image);
+            $("#productTitle").text(products[index].title);
+
+            $("#productImage").removeClass("flip");
+
+        }, 400);
+
+    }
+
+    // Change every 3 seconds
+    setInterval(changeProduct, 3000);
+
+});

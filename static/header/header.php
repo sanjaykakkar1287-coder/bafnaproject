@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="./static/css/homepages/about.css">
 <link rel="stylesheet" href="./static/css/homepages/product.css">
 <link rel="stylesheet" href="./static/css/homepages/contact.css">
+<link rel="stylesheet" href="./static/css/homepages/privacy.css">
+<link rel="stylesheet" href="./static/css/homepages/terms.css">
 
 <?php include './pages/modal.php'; ?>
 
@@ -71,7 +73,7 @@
         }
 
         // Use a more specific selector for the header button
-        $("#contactbtn").click(function(e){
+        $("#contactbtn, #contactfooter").click(function(e){
             e.preventDefault();
             setActive('#contactmenu'); // Set menu item active
             loadContactPage();
@@ -122,6 +124,19 @@
             setActive('#aboutbtn'); // Keep the menu item active
             loadAboutPage();
             // No need to close mobile menu here as this button is not in it
+        });
+
+         $("#privacybtn-footer").click(function(e) {
+            e.preventDefault();
+            setActive(this);
+            loadPrivacyPage();
+            closeMobileMenu();
+        });
+        $("#termsbtn-footer").click(function(e) {
+            e.preventDefault();
+            setActive(this);
+            loadTermsPage();
+            closeMobileMenu();
         });
     });
     </script>

@@ -1,0 +1,100 @@
+.terms-conditions{
+    padding:80px 8%;
+    background:#f8f9f8;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.terms-conditions .container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.terms-conditions h2{
+    font-size:58px;
+    font-weight:800;
+    color:#111;
+    margin-bottom:20px;
+    line-height:1.1;
+}
+
+.terms-conditions h2 span{
+    color:#0b5d48;
+}
+
+.terms-conditions> .container> p{
+    font-size:18px;
+    color:#555;
+    line-height:1.9;
+    margin-bottom:50px;
+    max-width:900px;
+}
+
+.policy-item{
+    background:#fff;
+    border-left:5px solid #0b5d48;
+    padding:30px;
+    margin-bottom:25px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s ease;
+}
+
+.policy-item:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.policy-item h3{
+    font-size:24px;
+    color:#111;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+.policy-item p{
+    color:#666;
+    font-size:16px;
+    line-height:1.9;
+    margin:0;
+}
+
+.policy-item strong{
+    color:#0b5d48;
+}
+
+@media (max-width:992px){
+
+    .terms-conditions{
+        padding:60px 6%;
+    }
+
+    .terms-conditions h2{
+        font-size:44px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .terms-conditions h2{
+        font-size:34px;
+    }
+
+    .terms-conditions>.container>p{
+        font-size:16px;
+    }
+
+    .policy-item{
+        padding:22px;
+    }
+
+    .policy-item h3{
+        font-size:20px;
+    }
+
+    .policy-item p{
+        font-size:15px;
+        line-height:1.8;
+    }
+
+}

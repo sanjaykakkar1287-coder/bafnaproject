@@ -33,10 +33,12 @@
                     <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
                 </a>
 
-                <a href="#" class=" hero-btn-outline" >
-                    <i class="fa-solid fa-arrow-down-to-line" aria-hidden="true"></i>
-                    <span>Download Catalogue</span>
-                </a>
+                <a href="#" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 28px;background:#ffffff;color:#222;text-decoration:none;border:2px solid #0E6446;border-radius:50px;font-size:16px;font-weight:600;font-family:Arial,sans-serif;transition:all .3s ease;cursor:pointer;"
+   onmouseover="this.style.background='#0E6446';this.style.color='#fff';"
+   onmouseout="this.style.background='#fff';this.style.color='#0E6446';">
+    <i class="fa-solid fa-arrow-down-to-line" aria-hidden="true"></i>
+    <span>Download Catalogue</span>
+</a>
             </div>
 
             <div class="hero-counter" aria-label="Manufacturing capacity">
@@ -90,7 +92,7 @@
             <div class="hero-product-card">
                 <div class="hero-product-card-inner">
                     <div class="product-card-3d-viewer">
-                        <img src="./static/img/note.avif" alt="Premium Notebook Product" class="product-image-3d">
+                        <img src="./static/img/note1.png" alt="Premium Notebook Product" class="product-image-3d" id="productImage">
                     </div>
                     <div class="product-card-info">
                         <p>High-Density Paper Notebooks</p>
