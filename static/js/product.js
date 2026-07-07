@@ -102,8 +102,69 @@ function initProductPage() {
                 startDomTimer();
             });
         }
+    
+/* ==================== RUNTIME 3: PRODUCT SLIDER ==================== */
+
+var current = 0;
+var $productSlides = $section.find(".product-slider .slide");
+var totalProductSlides = $productSlides.length;
+
+if (window.bafnaProductSliderTimer) {
+    clearInterval(window.bafnaProductSliderTimer);
+}
+
+if (totalProductSlides > 0) {
+
+    $productSlides.hide().eq(0).css("display", "flex");
+
+    function showProductSlide(index) {
+
+        $productSlides.stop(true, true).fadeOut(500);
+
+        $productSlides.eq(index)
+            .css("display", "flex")
+            .hide()
+            .fadeIn(500);
+
     }
 
+    function nextProductSlide() {
+        current = (current + 1) % totalProductSlides;
+        showProductSlide(current);
+    }
+
+    function startProductSlider() {
+
+        stopProductSlider();
+
+        window.bafnaProductSliderTimer = setInterval(function () {
+            nextProductSlide();
+        }, 4000);
+
+    }
+
+    function stopProductSlider() {
+
+        if (window.bafnaProductSliderTimer) {
+            clearInterval(window.bafnaProductSliderTimer);
+            window.bafnaProductSliderTimer = null;
+        }
+
+    }
+
+    startProductSlider();
+
+    $section.find(".product-slider")
+        .off("mouseenter.product mouseleave.product")
+        .on("mouseenter.product", function () {
+            stopProductSlider();
+        })
+        .on("mouseleave.product", function () {
+            startProductSlider();
+        });
+
+}
+    }
     // Expose the function to the global scope so it can be called from other scripts
     window.initShowroomCarousel = initShowroomCarousel;
 })(window.jQuery);

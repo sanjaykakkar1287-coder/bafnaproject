@@ -65,6 +65,7 @@
 <script src="./static/js/header.js"></script>
 <script src="./static/js/loginshortcut.js"></script>
 <script src="./static/js/modal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
 </body>
 </html>

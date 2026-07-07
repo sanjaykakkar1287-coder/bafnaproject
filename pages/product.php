@@ -1,12 +1,12 @@
 <section class="products-page-container" aria-labelledby="products-main-title">
     <div class="products-shell">
-        
+
         <div class="products-hero-header">
             <div class="section-badge">
                 <span class="badge-dot"></span>
                 Industrial Showroom
             </div>
-            
+
             <h1 class="products-main-title" id="products-main-title">
                 <span>The Production Showcase.</span>
                 <span class="color-shifting-text">Calibrated For Global Demand.</span>
@@ -14,13 +14,13 @@
         </div>
 
         <div class="showroom-carousel-wrapper">
-            
+
             <div class="carousel-side-metrics">
                 <div class="matrix-mesh-bg"></div>
                 <div class="active-index-counter">
                     <span class="curr-slide">01</span><span class="slide-sep">/</span><span class="total-slides">06</span>
                 </div>
-                
+
                 <div class="metrics-dynamic-data">
                     <div class="meta-label-strip">Technical Blueprint</div>
                     <div class="spec-pills-stack">
@@ -36,7 +36,7 @@
 
             <div class="carousel-main-content">
                 <div class="showroom-slides-container">
-                    
+
                     <div class="showroom-slide active" data-spec1="GSM Variations: 54 - 80" data-spec2="Smyth Sewn / Wire-O">
                         <span class="market-segment-tag">Export Portfolio</span>
                         <h3>School Supplies Range</h3>
@@ -98,7 +98,7 @@
             </div>
 
             <div class="vertical-flip-grid">
-                
+
                 <div class="unfold-card-3d" style="--dom-idx: 1;">
                     <div class="unfold-card-inner-engine">
                         <div class="unfold-card-face front-face">
@@ -159,6 +159,41 @@
             </div>
         </div>
 
+        <section class="product-slider"> <!-- Slide 1 -->
+            <div class="slide">
+                
+                <div class="product-image"> <img src="./static/img/domestic-school.jpg" alt="School Supplies"> </div>
+                <div class="product-content"> <span class="product-category">Hover to Open</span>
+                    <h2>School Supplies</h2>
+                    <p> <strong>Scholastic Standard</strong><br> High-quality notebooks, exercise books, drawing books, and educational stationery crafted with ultra-white paper for Indian scholastic systems. </p>
+                    <div class="features"> <span>✔ Pin Bound / Center Stapled</span><br> <span>✔ Ultra-White Paper</span> </div> <a href="#" class="btn">Explore Products</a>
+                </div>
+            </div> <!-- Slide 2 -->
+            <div class="slide">
+                
+                <div class="product-image"> <img src="./static/img/domestic-pencils.jpg" alt="Wood-Free Pencils"> </div>
+                <div class="product-content"> <span class="product-category">Hover to Open</span>
+                    <h2>Wood-Free Pencils</h2>
+                    <p> <strong>Precision Polymer</strong><br> Reliable writing and dark-graphite colouring solutions for students, institutional classrooms, and drawing professionals nationwide. </p>
+                    <div class="features"> <span>✔ Splinter-Free Material</span><br> <span>✔ Smooth Writing Experience</span> </div> <a href="#" class="btn">Explore Products</a>
+                </div>
+            </div> <!-- Slide 3 -->
+            <div class="slide">
+                
+                <div class="product-image"> <img src="./static/img/domestic-other.jpg" alt="Premium Utilities"> </div>
+                <div class="product-content"> <span class="product-category">Hover to Open</span>
+                    <h2>Other Premium Utilities</h2>
+                    <p> <strong>Corporate & Retail</strong><br> Office stationery, bound journals, utility gift boxes, child learning activity books, and specialized conversion paper products. </p>
+                    <div class="features"> <span>✔ Office Stationery</span><br> <span>✔ Gift Boxes & Activity Books</span> </div> <a href="#" class="btn">Explore Products</a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
         <hr class="luxury-divider">
 
         <div class="oem-capabilities-panel">
@@ -170,7 +205,7 @@
                     </div>
                     <h2>Customized for Your Target Market.</h2>
                     <p class="oem-lead">We deliver deep private-label configuration and specialized OEM architectures with unrestricted operational agility across multiple structural parameters:</p>
-                    
+
                     <ul class="oem-spec-list">
                         <li><i class="fa-solid fa-sliders"></i> <span>Custom Paper GSM & Whiteness Levels</span></li>
                         <li><i class="fa-solid fa-palette"></i> <span>Bespoke Cover Art, Branding, & Finishings</span></li>
@@ -178,7 +213,7 @@
                         <li><i class="fa-solid fa-gears"></i> <span>Configurable Product Shapes, Dimensions, & Bindings</span></li>
                     </ul>
                 </div>
-                
+
                 <div class="oem-interactive-right">
                     <div class="capabilities-glass-card">
                         <div class="glass-header">
@@ -205,3 +240,8 @@
 
     </div>
 </section>
+
+<script  src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    
+</script>

@@ -1,4 +1,5 @@
 <?php include 'hero.php';?>
+
 <script src="./static/js/hero.js"></script>
 
 
@@ -493,3 +494,5 @@
 
     </div>
 </section>
+
+

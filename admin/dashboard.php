@@ -14,7 +14,7 @@ $username = $_SESSION['username'];
 
 // Fetch enquiries from the database
 $enquiries = [];
-$sql = "SELECT id, name, email, requirement, message, created_at FROM enquiries ORDER BY created_at DESC";
+$sql = "SELECT id, name, company, email, phone, country, requirement, message, created_at FROM enquiries ORDER BY created_at DESC";
 $result = $conn->query($sql);
 
 ?>
@@ -66,8 +66,11 @@ $result = $conn->query($sql);
                             <tr>
                                 <th>ID</th>
                                 <th style="min-width: 60px;">Name</th>
+                                <th>Company</th>
                                 <th>Email</th>
-                                <th>Subject</th>
+                                <th>Phone</th>
+                                <th>Country</th>
+                                <th>Requirement</th>
                                 <th>Message</th>
                                 <th style="min-width: 160px;">Received On</th>
                                 <th>Actions</th>
@@ -79,8 +82,11 @@ $result = $conn->query($sql);
                                     <tr>
                                         <td data-label="ID"><?php echo htmlspecialchars($row['id']); ?></td>
                                         <td data-label="Name"><?php echo htmlspecialchars($row['name']); ?></td>
+                                        <td data-label="Company"><?php echo htmlspecialchars($row['company']); ?></td>
                                         <td data-label="Email"><?php echo htmlspecialchars($row['email']); ?></td>
-                                        <td data-label="Subject"><?php echo htmlspecialchars($row['requirement']); ?></td>
+                                        <td data-label="Phone"><?php echo htmlspecialchars($row['phone']); ?></td>
+                                        <td data-label="Country"><?php echo htmlspecialchars($row['country']); ?></td>
+                                        <td data-label="Requirement"><?php echo htmlspecialchars($row['requirement']); ?></td>
                                         <td data-label="Message" class="message-cell" data-id="<?php echo $row['id']; ?>" title="Double-click to read full message">
                                             <?php
                                                 $message = $row['message'];
@@ -102,7 +108,7 @@ $result = $conn->query($sql);
                                 <?php endwhile; ?>
                             <?php else: ?>
                                 <tr>
-                                    <td colspan="7" style="text-align: center; padding: 40px;">No enquiries found.</td>
+                                    <td colspan="10" style="text-align: center; padding: 40px;">No enquiries found.</td>
                                 </tr>
                             <?php endif; ?>
                         </tbody>

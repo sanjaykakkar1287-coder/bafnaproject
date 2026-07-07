@@ -1,3 +1,5 @@
+
+
 <section class="hero-section" aria-labelledby="homeHeroTitle">
     <div class="hero-shell">
         <!-- UPGRADED PREMIUM LEFT SIDE -->
@@ -33,11 +35,14 @@
                     <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
                 </a>
 
-                <a href="#" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 28px;background:#ffffff;color:#222;text-decoration:none;border:2px solid #0E6446;border-radius:50px;font-size:16px;font-weight:600;font-family:Arial,sans-serif;transition:all .3s ease;cursor:pointer;"
+                <!-- <a href="#" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 28px;background:#ffffff;color:#222;text-decoration:none;border:2px solid #0E6446;border-radius:50px;font-size:16px;font-weight:600;font-family:Arial,sans-serif;transition:all .3s ease;cursor:pointer;"
    onmouseover="this.style.background='#0E6446';this.style.color='#fff';"
    onmouseout="this.style.background='#fff';this.style.color='#0E6446';">
     <i class="fa-solid fa-arrow-down-to-line" aria-hidden="true"></i>
-    <span>Download Catalogue</span>
+    <span>Download Catalogue</span> -->
+   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  admin Info
+</button>
 </a>
             </div>
 

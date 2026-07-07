@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./static/css/homepages/home.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 <!-- Add these to your <head> section -->
 <link rel="stylesheet" href="./static/css/homepages/home.css">
 <link rel="stylesheet" href="./static/css/homepages/hero.css">
@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="./static/css/homepages/terms.css">
 
 <?php include './pages/modal.php'; ?>
+<?php include './pages/infoadmin.php'; ?>
 
 </head>
 
@@ -38,6 +39,10 @@
                     </button>
                 </form>
             </div>
+
+<!-- Button trigger modal -->
+
+
 
             <div class="header-right">
                 <a href="#" class="contact-link contact-btn" id="contactbtn">Contact Us</a> <!-- Added class for button styling -->
